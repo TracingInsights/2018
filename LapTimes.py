@@ -45,11 +45,11 @@ TARGET_EVENT_NAMES_LIST = [
     #       'British Grand Prix', 
     #       'German Grand Prix', 'Hungarian Grand Prix', 
     # 'Belgian Grand Prix',
-    # 'Italian Grand Prix',
+    'Italian Grand Prix',
     #       'Singapore Grand Prix', 
    
     # 'Mexican Grand Prix', 
-    "Australian Grand Prix",
+    # "Australian Grand Prix",
     
     # 'Brazilian Grand Prix', 'Abu Dhabi Grand Prix',
     #  'Russian Grand Prix', 'Japanese Grand Prix', 'United States Grand Prix',
@@ -68,10 +68,10 @@ AVAILABLE_SESSIONS = [
 ]
 # Select one or more sessions from AVAILABLE_SESSIONS.
 TARGET_SESSIONS = [
-    "Practice 1",
-    "Practice 2",
-    "Practice 3",
-    "Qualifying",
+    # "Practice 1",
+    # "Practice 2",
+    # "Practice 3",
+    # "Qualifying",
     # "Sprint Qualifying",
     # "Sprint",
     "Race",
