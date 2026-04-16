@@ -45,7 +45,7 @@ TARGET_EVENT_NAMES_LIST = [
           'British Grand Prix', 
           'German Grand Prix', 'Hungarian Grand Prix', 
     'Belgian Grand Prix',
-    'Italian Grand Prix',
+    # 'Italian Grand Prix',
           'Singapore Grand Prix', 
    
     'Mexican Grand Prix', 
