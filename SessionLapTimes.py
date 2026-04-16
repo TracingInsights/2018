@@ -205,10 +205,12 @@ def merge_session(event_name: str, session_name: str) -> bool:
 
         lap_count = _driver_lap_count(data)
         if lap_count == 0:
-            logger.error(
-                "laptimes.json for driver %s in %s contains no lap rows", driver, label
+            logger.warning(
+                "laptimes.json for driver %s in %s contains no lap rows — skipping driver",
+                driver,
+                label,
             )
-            return False
+            continue
 
         driver_data[driver] = data
         logger.info("  Loaded %s: %d lap(s)", driver, lap_count)
@@ -221,6 +223,8 @@ def merge_session(event_name: str, session_name: str) -> bool:
     # Preserve a stable key order: use the first driver's key order as the
     # base, then append any extra keys seen in subsequent drivers.
     for driver in drivers:
+        if driver not in driver_data:
+            continue
         for key in driver_data[driver]:
             if key not in seen:
                 all_keys.append(key)
@@ -233,6 +237,8 @@ def merge_session(event_name: str, session_name: str) -> bool:
     merged: Dict[str, List] = {key: [] for key in all_keys}
 
     for driver in drivers:
+        if driver not in driver_data:
+            continue
         data = driver_data[driver]
         lap_count = _driver_lap_count(data)
         for key in all_keys:
